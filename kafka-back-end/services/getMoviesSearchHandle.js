@@ -311,6 +311,8 @@ function handle_addOwnerMovies(msg, callback) {
 
 
     var d = new Date();
+    let newDate = new Date();
+    d.setDate(d.getDate() -4);
 
     {
 
@@ -326,7 +328,7 @@ function handle_addOwnerMovies(msg, callback) {
                 "MovieName": "Rampage"
             },
             "ScreenNo": 1,
-            "Showtimes": { time:"10:30a",seats:40},
+            "Showtimes":[ { time:"10:30a",seats:40},{ time:"9:30a",seats:40}],
             "NoofSeats": 15,
             "TicketPrice": 10,
             "Date": d,
