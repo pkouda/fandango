@@ -1,25 +1,16 @@
 import React, {Component} from 'react';
-import BrandBar from './home/brandBar'
-import MegaDropDownHeader from './home/megaDropDownHeader';
 import EditMovieBody from './editMovieHall/editMovieHall';
 import {connect} from "react-redux";
-import {demo} from "../actions/vishalActions";
+import MovieHallMegaDropDownHeader from './movieHallSignIn/movieHallMegaDropDown';
 
 
 
-
-class Movietime extends Component {
-
-
-    // componentDidMount(){
-    //     this.props.demo()
-    // }
+class EditMovieHall extends Component {
 
     render() {
         return (
             <div>
-                <BrandBar/>
-                <MegaDropDownHeader/>
+                <MovieHallMegaDropDownHeader/>
                 <EditMovieBody history={this.props.history}/>
             </div>
         )
@@ -30,4 +21,4 @@ function mapStateToProps(state) {
     return {home: state.home}
 }
 
-export default connect(null, null)(Movietime);
+export default connect(null, null)(EditMovieHall);

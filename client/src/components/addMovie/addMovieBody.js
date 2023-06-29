@@ -10,23 +10,26 @@ import DropdownList from 'react-widgets/lib/DropdownList'
 import Multiselect from 'react-widgets/lib/Multiselect'
 import 'react-widgets/dist/css/react-widgets.css';
 
-class MovieTopSection extends Component {
+
+class AddMovieTopSection extends Component {
 
 
     componentWillMount()
     {
         console.log("calling movie halls");
-        this.props.GetMoviesnHalls();
+        this.props.GetMoviesnHalls({email:this.props.user.user.email});
 
     }
     state = {
-        movieSearch: ""
+        movieSearch: "",
+        userEmail:""
     }
 
     renderField(field) {
         const className = `form-control input-login ${field.meta.touched && field.meta.error ? 'border-red' : ''}`
         return (
             <div className="form-group form-group-custom">
+                <small className='font-weight-700 font-size-14'>{field.label}</small>
                 <input
                     className={className}
                     {...field.input}
@@ -40,11 +43,12 @@ class MovieTopSection extends Component {
             </div>
         )
     }
-    renderMultiselect = ({input, data, valueField, textField, meta}) => {
+    renderMultiselect = ({input, data, valueField, textField, meta,label}) => {
 
         const className = `${meta.touched && meta.error ? 'border-red' : ''}`
         return (
             <div>
+                <small className='font-weight-700 font-size-14'>{label}</small>
                 <Multiselect {...input}
                              className={className}
                              onBlur={() => input.onBlur()}
@@ -71,11 +75,12 @@ class MovieTopSection extends Component {
 
 
 
-    renderDropdown = ({input, data, valueField, textField, meta,placeholder}) => {
+    renderDropdown = ({input, data, valueField, textField, meta,placeholder,label}) => {
 
         const className = `${meta.touched && meta.error ? 'border-red' : ''}`
         return (
             <div>
+                <small className='font-weight-700 font-size-14'>{label}</small>
                 <DropdownList {...input}
                              className={className}
                              onBlur={() => input.onBlur()}
@@ -122,6 +127,8 @@ class MovieTopSection extends Component {
         {
            // d.setDate(d.getDate() + 1);
             //values.Date=i;
+
+            values.userEmail=this.props.user.user.email;
             console.log(values);
             this.props.addMovie(values);
         }
@@ -150,9 +157,37 @@ class MovieTopSection extends Component {
             </div>
         )
     }
+    movieFilter = (filterPrice) => {
+        console.log("filter email is : "+filterPrice);
+        // this.setState({filterPrice: filterPrice});
+
+        var movieFiltered = this.props.moviesDropdown.movies.movietheatre.filter(function (task) {
+            console.log(task.data[0].user);
+            //console.log(this.state);
+
+            return task.data[0].user == filterPrice;
+        });
+        /*
+        var priceFilterArray = this.state.totalHotelResults.filter(val => {return val.price < filterPrice;});
+        if(priceFilterArray.length <= 0 ){
+            console.log("Empty array ");
+            this.setState({emptyResults: true});
+        }
+        else{
+            this.setState({emptyResults: false});
+        }
+        console.log("After Filter in cars: "+priceFilterArray);
+        this.setState({hotelResults: priceFilterArray});*/
+        return(movieFiltered);
+    };
 
     render() {
-        console.log(this.props);
+        console.log(this.props.user);
+       /* if(this.props.user.username!=null && this.state.userEmail=="")
+        {
+            this.setState({userEmail:this.props.user.username.email})
+        }*/
+
         if(this.props.addMovies.addMovies==true)
         {
             swal("Movie Added");
@@ -186,44 +221,71 @@ class MovieTopSection extends Component {
 
                                         <div className="col-md-7">
                                             <div className="mt-4 ml-0 pl-0">
+                                                <div className="form-group form-group-custom">
+                                                    <Field
+                                                        name="theatre"
+                                                        component={this.renderDropdown}
+                                                        data={this.movieFilter(this.props.user.user.email)
+
+                                                            }
+                                                        valueField="type"
+                                                        type="DropdownList"
+                                                        textField="type"
+                                                        label="Movie Hall name"
+                                                        placeholder="Select a Movie Hall "/>
+                                                </div>
+                                                <br/>
 
 
                                                 <div className="form-group form-group-custom">
-                                                <Field
+                                                    <Field
                                                     name="movie"
                                                     component={this.renderDropdown}
                                                     data={this.props.moviesDropdown.movies.moviemap}
                                                     valueField="movie"
                                                     type="DropdownList"
                                                     textField="movie"
+                                                    label="Movie Name"
                                                 placeholder="Select a Movie name"/>
                                                 </div>
-
                                                 <br/>
-                                                <div className="form-group form-group-custom">
-                                                    <Field
-                                                        name="theatre"
-                                                        component={this.renderDropdown}
-                                                        data={this.props.moviesDropdown.movies.movietheatre.filter(function (task) {
-                                                            console.log(task.data[0].user)
-                                                            return task.data[0].user == "pranithkouda@gmail.com";
-                                                        })}
-                                                        valueField="type"
-                                                        type="DropdownList"
-                                                        textField="type"
-                                                        placeholder="Select a Movie Hall "/>
-                                                </div>
+
+
+
                                                 <Field
                                                     name="showTimes"
                                                     component={this.renderMultiselect}
-                                                    data={["9:30a","12:30p","3:30p","9:30p"]}
+                                                    data={["9:00a","9:30a","10:00a","10:30a","11:00a","11:30a","12:00p","12:30p","1:00p","1:30p",
+                                                        "2:00p","2:30p","3:00p","3:30p","4:00p","4:30p","5:00p",
+                                                        "5:30p","6:00p","6:30p","7:00p","7:30p","8:00p","8:30p","9:00p","9:30p",
+                                                        "10:00p","10:30p","11:00p","11:30p","12:00a"
+                                                        ]}
                                                     placeholder="Select Show time"
+                                                    label="Show Times"
+                                                />
+
+                                                <br/>
+                                                <Field
+                                                    name="screenNo"
+                                                    component={this.renderDropdown}
+                                                    data={["1","2","3","4"]}
+                                                    placeholder="Select Screen Number for the screen"
+                                                    label="Screen Number"
                                                 />
                                                 <br/>
                                                 <Field
-                                                    label="Please enter number of seats "
+                                                    label="Seats"
                                                     name="noOfSeats"
                                                     component={this.renderField}
+                                                    placeholder="Enter number of seats"
+                                                    type="text"
+                                                />
+                                                <br/>
+                                                <Field
+                                                    label="Ticket Price"
+                                                    name="tktPrice"
+                                                    component={this.renderField}
+                                                    placeholder="Enter the price of ticket"
                                                     type="text"
                                                 />
                                                 <br/>
@@ -261,10 +323,27 @@ function validate(values) {
     const errors = {};
 
     //names are associated to fields in the redux form names
-    if (!values.noOfSeats) {
-        errors.username = "No of Seats can't be empty";
+    if (!values.theatre) {
+        errors.theatre = "Theatre Movie Cant be empty";
     }
-
+    if (!values.showTimes) {
+        errors.showTimes = "Showtimes cant be empty";
+    }
+    if (!values.movie) {
+        errors.movie = "Movie name can't be empty";
+    }
+    if (!values.screenNo) {
+        errors.screenNo = "Screen No can't be empty";
+    }
+    if (!values.noOfSeats) {
+        errors.noOfSeats = "Number of Seats can't be empty";
+    }
+    if (!values.tktPrice) {
+        errors.tktPrice = "Ticket Price can't be empty";
+    }
+    if (!values.movie) {
+        errors.movie = "Movie name can't be empty";
+    }
     return errors;
 }
 
@@ -272,7 +351,8 @@ function mapStateToProps(state) {
     return {
         movietime: state.moviesSearchPagePK,
         moviesDropdown:state.moviesDropdown,
-        addMovies:state.addMovies}
+        addMovies:state.addMovies,
+        user:state.getUser}
 }
 
 
@@ -280,4 +360,4 @@ export default
 reduxForm({
     validate,
     form: 'AddMovie'
-})(connect(mapStateToProps, {getMoviesInSearchPage,GetMoviesnHalls,addMovie})(MovieTopSection));
+})(connect(mapStateToProps, {getMoviesInSearchPage,GetMoviesnHalls,addMovie})(AddMovieTopSection));

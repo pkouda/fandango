@@ -9,13 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "kafka-node": "^2.5.0",
-    "moment": "^2.22.1",
-    "mongodb": "^2.2.31",
+    "bcryptjs": "^2.4.3",
+    "delay": "^2.0.0",
+    "kafka-node": "^2.2.3",
+    "mongodb": "^2.2.33",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "delay": "^2.0.0",
-    "random-int": "^1.0.0"
+    "random-int": "^1.0.0",
+    "redis": "^2.8.0",
+    "sequelize": "^4.37.6"
   },
   "devDependencies": {},
   "description": ""

@@ -3,9 +3,10 @@ import {Field, reduxForm, FormSection} from 'redux-form';
 import _ from 'lodash'
 import {connect} from 'react-redux';
 // import Error from './notFound'
-
+import swal from 'sweetalert'
 import creditCardType, {types as CardType} from 'credit-card-type';
 import images from '../../creditCardImages';
+import {savePaymentData} from '../../actions/pranithActions'
 // import {makePayment} from "../actions";
 
 const supportedCards = [
@@ -192,6 +193,21 @@ const renderTextField = ({input, label, type, meta: {touched, error, warning}, f
 class Transaction extends Component {
 
     onSubmit(data) {
+        console.log(data);
+        console.log(this.props.user);
+        console.log(this.props.movie);
+        console.log(this.props.showtime)
+        console.log(this.props.total);
+
+
+     var   paymentData={
+            creditCard:data,
+            movies: this.props.movie,
+            showtime:this.props.showtime,
+            total:this.props.total,
+            user:this.props.user.user
+     }
+        this.props.savePaymentData(paymentData);
         // console.log(data)
         // console.log(data.payment.cardNumber)
         // console.log(data.payment.nameOnCard)
@@ -200,6 +216,7 @@ class Transaction extends Component {
         // console.log(this.props.location.state.owner)
         // console.log(this.props.location.state.bidder)
         // console.log(this.props.location.state.bidAmount)
+/*
 
         var body = new FormData();
 
@@ -210,10 +227,11 @@ class Transaction extends Component {
         body.append('bidder', this.props.location.state.bidder)
         body.append('bidAmount', this.props.location.state.bidAmount)
         body.append('projectid', this.props.location.state.projectid)
+*/
 
         // this.props.makePayment(body)
-
-        this.props.history.push('/dashboard')
+  //swal("Payment Successful");
+    //    this.props.history.push('/home')
     }
 
     render() {
@@ -229,7 +247,19 @@ class Transaction extends Component {
         //         </div>
         //     )
         // }
-
+console.log(this.props.savePayments);
+console.log(this.props);
+        console.log(this.props.user);
+if(this.props.savePayments.booking===true)
+{
+    swal("movie booked")
+    this.props.history.push("/home");
+}
+else if(this.props.savePayments.booking===false)
+{
+    swal("Boooking not completed");
+   this.props.history.push("/home");
+}
         return (
             <div>
 
@@ -276,10 +306,17 @@ class Transaction extends Component {
 }
 
 
+ function mapStateToProps(state) {
+     return {home: state.home,
+         savePayments:state.savePayments,
+     user:state.getUser}
+}
+
+
 export default reduxForm({
     validate,
     form: 'payment-form',
 })(
-    connect(null, null)(Transaction)
+    connect(mapStateToProps, {savePaymentData})(Transaction)
 );
 

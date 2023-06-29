@@ -1,0 +1,50 @@
+#registration-header{
+    background: #4c4c4c;
+    font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+#offer{
+
+    height:498px;
+    width:407px;
+}
+
+.join-header{
+    padding-top: 20px;
+}
+input{
+    height: 2.3125rem;
+
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+
+    font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+    font: 400 11px system-ui;
+}
+.divider{
+    font-style: italic;
+}
+hr{
+    border: solid #dddddd;
+}
+.text-help{
+
+    color: red;
+}
+.intercept-container{
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sub-panel{
+    margin-left: auto;
+}

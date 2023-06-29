@@ -1,0 +1,102 @@
+#profile_block{
+    /*margin-left: 30px;*/
+
+}
+
+#profile_block p{
+    /*margin-left: 30px;*/
+    color: black !important;
+
+}
+
+
+.Collapsible__trigger{
+
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.date-box{
+
+    margin-left: 10px;
+}
+
+#MonthBox{
+
+    padding-right: auto;
+}
+
+#YearBox{
+
+    padding-left: auto;
+}
+
+.collapse-element{
+    padding :15px;
+}
+
+.footer-elements{
+    margin-left: 15px;
+
+}
+.footer-nav{
+    padding-top: 30px;
+    background: #4c4c4c;
+}
+.footer-nav-header{
+    padding-bottom: 3px;
+    height:45px;
+    width:400px;
+    font-size: 1.5rem;
+}
+
+.footer-utility-group{
+    margin-left: 15px;
+}
+
+.panel{
+    padding: 20px;
+    background: none repeat scroll 0 0 #f8f9fa;
+    /*padding-left: 10px;*/
+}
+.email-form{
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+.password-form{
+    padding-left: 10px;
+    padding-top:10px;
+}
+
+.payment-form{
+    padding-left: 10px;
+    padding-top:10px;
+
+}
+
+#profile-pic{
+    padding:10px;
+
+    width: 160px;
+    height: 160px;
+}
+.special-note{
+    padding-top: 1px;
+
+}
+#display-name{
+    padding-bottom: 0px;
+}
+
+
+#profile_block{
+    margin:50px;
+}
+
+#save-basic{
+    margin-top: 20px;
+    color:white;
+    background-color: #0d89f3;
+}
+

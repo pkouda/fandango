@@ -1,0 +1,16 @@
+.movie-list-details{
+    color: black;
+    width: 60%;
+    font-size: 18px;
+    margin:20px 0px;
+
+}
+
+#list-movie-heading{
+    margin:30px;
+    color:black;
+}
+
+.Movie-Name{
+    font-weight: 600;
+}

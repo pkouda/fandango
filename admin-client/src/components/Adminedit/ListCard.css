@@ -1,0 +1,45 @@
+
+.userProfile-List{
+    padding-left: 50px;
+    padding-bottom: 20px;
+    margin: 50px;
+}
+
+.user-List-card{
+    background-color: white;
+}
+
+.List-user-name{
+    color: #4c4c4c;
+    font-size: 28px;
+
+}
+
+.list-user-email {
+    float:left;
+    padding-top: 20px;
+    font-size: large;
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-weight: bold;
+}
+
+.List-user-heading{
+    padding-left: 50px;
+    padding-bottom:30px;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.Purchase-item{
+    float:left;
+    margin:0px 20px;
+
+}
+
+#list-email{
+    float: left
+}
+
+#List-edit{
+    margin-left: 50px;
+}

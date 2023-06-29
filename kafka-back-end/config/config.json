@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "test",
+    "password": "pass",
+    "database": "fandango",
+    "host": "fandango.coiprk9rsjrx.us-west-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "",
+    "password": null,
+    "database": "",
+    "host": "",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "",
+    "password": null,
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

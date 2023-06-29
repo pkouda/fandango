@@ -1,0 +1,245 @@
+.fd-movie {
+    position: relative;
+    background-color: #fff;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex: 0 1 auto;
+    height:186px;
+}
+
+
+.fd-movie__poster{
+    max-width: inherit;
+}
+
+.fd-movie__details{
+    font-family: alternate-gothic-no-1-d,"Futura Condensed","Arial Narrow",Arial,sans-serif;
+    color:black;
+    padding: 10px;
+
+}
+.fd-theater__header {
+    background: #262626;
+    color: #fff;
+    padding: 10px;
+}
+.fd-movie__showtimes__tick-headline {
+    margin-bottom: 15px;
+    color: #929292;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 22px;
+    display: inline-block;
+    font-family: "Times New Roman",Times,Baskerville,Georgia,serif;
+
+}
+.showtime-btn {
+    padding: 10px 10px !important;
+    margin: 4px;
+    text-align: center;
+}
+.btn {
+    background: #f15500;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+    padding: 10px 20px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.icon.icon-ticket {
+    width: 25px;
+    height: 19px;
+    background-position: center;
+}
+.icon-ticket, .no-touch .invert-hover .icon-ticket:hover {
+    background-image: url(./ticket.PNG);
+    background-repeat: no-repeat;
+}
+.icon {
+    font-size: 0;
+    direction: ltr;
+    background-color: transparent;
+}
+.btn, .icon {
+    display: inline-block;
+}
+.icon, img {
+    vertical-align: middle;
+}
+.btn, .icon {
+    display: inline-block;
+}
+.btn, .cta {
+    cursor: pointer;
+    font-weight: 700;
+}
+.btn, body {
+    font-family: proxima-nova,Helvetica,Arial,sans-serif;
+}
+.btn, input[type=checkbox] {
+    box-shadow: none;
+}
+.fd-movie__btn-list-item{
+    display:inline-block;
+}
+.headerResultsPincode{
+    background-image: url("./bg-header.jpg");
+    width: 100%;
+}
+
+.heading-size-xl{
+    color:white;
+}
+
+.light {
+    color: #FFF;
+    transition: color .3s linear;
+}
+
+.light {
+    color: #fff;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #4AA7F6;
+    -webkit-transition: color .3s linear;
+    -moz-transition: color .3s linear;
+    -o-transition: color .3s linear;
+    transition: color .3s linear;
+}
+a {
+    color: #4aa7f6;
+}
+a {
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+
+
+
+.uppercase {
+    text-transform: uppercase;
+}
+.font-lg {
+    font-size: 28px;
+}
+.font-300 {
+    font-weight: 300;
+}
+.font-sans-serif {
+    font-family: alternate-gothic-no-1-d,"Futura Condensed","Arial Narrow",Arial,sans-serif;
+
+}
+.font-lg, .font-md, .font-reg, .font-sm, .font-xl, .font-xxl, .font-xxs {
+    line-height: 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 400;
+}
+.font-proxima-nova{
+    font-family: proxima-nova,Helvetica,Arial,sans-serif;
+}
+.subnav__link-list {
+    margin-bottom: 10px;
+}
+menu, ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+div.headerSubMenuUL ul li{
+    display: inline;
+
+}
+.date-picker__location {
+    min-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+    background-color: #fff;
+}
+input.date-picker__location-input {
+    border-radius: 25px;
+    background-color: #ebebeb;
+    font-size: 16px;
+    border: 0;
+    box-shadow: inset 2px 3px 0 rgba(99,99,99,.5);
+    color: #333;
+    height: 38px;
+    margin: 0 0 0 15px;
+    padding: 0 0 0 15px;
+    position: relative;
+    vertical-align: middle;
+    transition: background-color .3s ease;
+    width: 325px;
+}
+.date-picker__location-submit {
+    vertical-align: middle;
+    background: #fe7900;
+    border-radius: 70%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    height: 48px;
+    width: 48px;
+    margin-left: 7px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 38px;
+    -webkit-transition: all .3s cubic-bezier(0,0,.58,1);
+    -moz-transition: all .3s cubic-bezier(0,0,.58,1);
+    -ms-transition: all .3s cubic-bezier(0,0,.58,1);
+    -o-transition: all .3s cubic-bezier(0,0,.58,1);
+    transition: all .3s cubic-bezier(0,0,.58,1);
+}
+.font-lg {
+    font-size: 28px;
+}
+.font-sans-serif {
+    font-family: alternate-gothic-no-1-d,"Futura Condensed","Arial Narrow",Arial,sans-serif;
+}
+.fd-theater__links {
+    display: inline-block;
+    padding-left: 9px;
+    padding-right: 3px;
+}
+.fd-theater__address-wrap{
+    display: inline-block;
+    padding-left: 5px;
+}
+a.fd-theater__links{
+    padding-right:3px;
+
+}
+img {
+    border: 0;
+    height: 100%;
+
+}
+.fd-movie__showtimes-variant{
+    padding-left:55px;
+}
+.dark {
+    color: #4c4c4c;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #4AA7F6;
+    -webkit-transition: color .3s linear;
+    -moz-transition: color .3s linear;
+    -o-transition: color .3s linear;
+    transition: color .3s linear;
+}

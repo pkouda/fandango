@@ -53,7 +53,7 @@ Pool.prototype.getConnection = function(){
         addConnectionToPool();
         poolStatus[pool.length-1] = CONNECTION_BUSY;
         poolExausted = false;
-        poolJSON = [{poolObject: pool[pool.length-1],poolObjectLocation: jCount}];
+        poolJSON = [{poolObject: pool[pool.length-1],poolObjectLocation: j}];
         return poolJSON;
     }
 }

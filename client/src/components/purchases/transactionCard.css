@@ -1,0 +1,43 @@
+.Purchase-container{
+    margin-left: 15px;
+}
+
+#purchase-image{
+    height: 260px;
+    width:240px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+#card-heading{
+    font-size: large;
+    font-weight: bold;
+    padding-top: 15px;
+    align-content: center;
+
+}
+#card-user{
+    padding-top: 20px;
+    font-size: large;
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-weight: bold;
+
+}
+#card-movie{
+    padding-top: 20px;
+
+}
+
+
+#ticket-div{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#transaction-div{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#theater-name{
+    color: black;
+}

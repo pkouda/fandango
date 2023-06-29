@@ -20,8 +20,7 @@ class Carousel extends Component {
                                 className="image-carousel image"/>
                         </div>
                         <div className="carousel-movie-name px-2 pt-1">
-                            <span className="font-condensed-bold p-0">{movie.title}</span>
-                            <br/>
+                            <h5 className="font-size-18 font-condensed-bold py-2">{movie.title}</h5>
                             <span className="font-timesNewRoman-gray">{moment(movie.release_date).format('MMM DD, YYYY')}</span>
                         </div>
                         </Link>

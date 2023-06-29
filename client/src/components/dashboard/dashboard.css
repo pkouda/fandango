@@ -1,0 +1,21 @@
+#AvatarImage {
+    height: 66px;
+    width: 66px;
+}
+
+.dashboard-conatiner {
+
+    margin-left: 20px;
+}
+
+.dashboard-conatiner p{
+    color: #262626 !important;
+}
+
+#delete {
+    float: right;
+}
+
+.theater-rewards{
+    padding: 0px !important;
+}

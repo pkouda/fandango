@@ -5,7 +5,7 @@ var MongoConPool = require("./mongoConnPool");
 
 //winston.add(winston.transports.File, { filename: './public/LogFiles/KayakAnalysis.json' });
 //winston.remove(winston.transports.Console);
-
+var client = require('../redis');
 
 function handle_request(msg, callback) {
 
@@ -21,6 +21,38 @@ function handle_request(msg, callback) {
         var queryJson = {
             "tmdbid": Number.parseInt(msg.tmdbid)
         };
+
+
+        /*client.get(queryJson.tmdbid, function(err, reply) {
+            console.log(reply);
+            if(reply == null){
+                console.log("in redisssssssssssssssssssssssss");
+                MongoConPool.findOne('movies', queryJson, function (err, movie) {
+                    if (err) {
+                        res.code = "401";
+                        callback(null, res);
+                    }
+                    else {
+                        res.code = 200;
+                        res.movie = movie;
+                        client.set(queryJson.tmdbid, JSON.stringify(res), function(err, reply){
+                            client.expire(queryJson.tmdbid, 20);
+                            callback(null, res); 
+                       });
+                        /*console.log("movie",movie)
+                        callback(null, res);
+                    }
+                });
+
+            }else{
+                    console.log("dataa from redissssssssssssssssssssssssssssss");
+                    //console.log(JSON.parse(reply));
+                    callback(null, JSON.parse(reply));
+                    //callback(null, reply);
+            }
+        });*/
+
+
 
         MongoConPool.findOne('movies', queryJson, function (err, movie) {
             if (err) {

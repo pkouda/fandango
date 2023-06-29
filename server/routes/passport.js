@@ -1,58 +1,100 @@
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
-var mongoURL = "mongodb://localhost:27017/login";
+var LocalStrategy = require('passport-local').Strategy;
+var sqlcon = require('../routes/mysql');
 var kafka = require('./kafka/client');
 
-module.exports = function(passport) {
-    passport.use('login', new LocalStrategy(function(username , password, done) {
-        console.log('in passport');
-        kafka.make_request('login_topic',{"username":username,"password":password}, function(err,results){
-            console.log('in result');
-            console.log(results);
-            if(err){
-                done(err,{});
-            }
-            else
-            {
-                console.log("Here in passport")
-                if(results.code == 200){
 
-                    console.log("why not")
-                    // passport.serializeUser(function(user, done) {
-                    //     console.log('serializing user: ');
-                    //     console.log(user);
-                    //     done(null, user._id);
-                    // });
-                    //
-                    // passport.deserializeUser(function(id, done) {
-                    //     console.log(id)
-                    //     console.log("heerer")
-                    //     user.findById(id, function (err, user) {
-                    //         console.log('no im not serial');
-                    //         done(err, user);
-                    //     });
-                    // });
+module.exports = function (passport) {
+    passport.serializeUser(function (user, cb) {
+        console.log('user:' + user.email);
+        cb(null, user);
+    });
 
+// used to deserialize the user
+    passport.deserializeUser(function (email, done) {
+        // User.findOne({'email': email}, function (err, user) {
+        //     console.log('deserialize', user);
+            done(null , email);
+        // });
+    });
 
-                    console.log("Here nn")
-                    done(null,results.result);
+    passport.use('user',new LocalStrategy({
+            usernameField: 'email',
+            passwordField: 'password'
+        }, function (username, password, done) {
+            console.log(username);
+            console.log(password);
+            kafka.make_request('signin', {"email": username, "password": password}, function (err, results) {
+                console.log('in result');
+                console.log(results);
+                if (err) {
+                    done(err, {});
+                }
+                console.log("results status", results.code);
+                if (results.code === 401) {
+                    console.log("hello strategy");
+                    done(null, false, {message: results.message});
                 }
                 else {
-                    done(null,false);
+                    console.log("I dont know");
+                    done(null, results);
                 }
-            }
-        });
-        /*try {
-            if(username == "bhavan@b.com" && password == "a"){
-                done(null,{username:"bhavan@b.com",password:"a"});
-            }
-            else
-                done(null,false);
+            });
+
+
         }
-        catch (e){
-            done(e,{});
-        }*/
-    }));
-};
+    ));
+
+    passport.use('moviehall',new LocalStrategy({
+            usernameField: 'email',
+            passwordField: 'password'
+        }, function (username, password, done) {
+            console.log(username);
+            console.log(password);
+            kafka.make_request('moviehallsignin', {"email": username, "password": password}, function (err, results) {
+                console.log('in result');
+                console.log(results);
+                if (err) {
+                    done(err, {});
+                }
+                console.log("results status", results.code);
+                if (results.code === 401) {
+                    console.log("hello strategy");
+                    done(null, false, {message: results.message});
+                }
+                else {
+                    console.log("I dont know");
+                    done(null, results);
+                }
+            });
+        }
+    ));
+
+    passport.use('adminSignin',new LocalStrategy({
+            usernameField: 'email',
+            passwordField: 'password'
+        }, function (username, password, done) {
+            console.log(username);
+            console.log(password);
+            kafka.make_request('adminsignin', {"email": username, "password": password}, function (err, results) {
+                console.log('in result');
+                console.log(results);
+                if (err) {
+                    done(err, {});
+                }
+                console.log("results status", results.code);
+                if (results.code === 401) {
+                    console.log("hello strategy");
+                    done(null, false, {message: results.message});
+                }
+                else {
+                    console.log("I dont know");
+                    done(null, results);
+                }
+            });
+        }
+    ));
+
+}
+
 
 

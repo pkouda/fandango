@@ -4,17 +4,19 @@ import {Link} from 'react-router-dom';
 import CreditCard from './creditCard';
 import Seat from 'material-ui/svg-icons/notification/airline-seat-flat-angled';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import moment from "moment/moment";
 
 class CheckOutPayment extends Component {
 
 
     render() {
+        console.log(this.props.location.state);
         return (
             <div>
                 <div className="background-fandango-checkout">
                     <div className="checkOut-container">
 
-                        <Link to="/">
+                        <Link to="/home">
                             <img className="megaDropDown-brand mt-1"
                                  src="https://images.fandango.com/mobile/web/img/assets/logo-fandango.svg"/>
                         </Link>
@@ -41,9 +43,11 @@ class CheckOutPayment extends Component {
                                 <br/>
                                 <hr/>
                                 <h4 className="font-condensed-bold color-darkgray">PAYMENT</h4>
+                                <h5 className='font-weight-700 font-size-14 align-right'> Total: {this.props.location.state.total.totalSum}</h5>
+                                <h5 className='font-weight-700 font-size-14'> Number of Tickets: {this.props.location.state.total.noOfTickets}</h5><br/>
                                 <h5 className="font-condensed-bold color-darkgray">USE CREDIT OR DEBIT CARD</h5>
 
-                                <CreditCard/>
+                                <CreditCard history={this.props.history} movie={this.props.location.state.movie} total={this.props.location.state.total} showtime={this.props.location.state.showtime}/>
                                 <hr/>
                                 <br/>
 
@@ -56,24 +60,26 @@ class CheckOutPayment extends Component {
 
                                 <hr/>
 
+
                                 <div className="row">
                                     <div className="col-md-5">
 
                                         <img className="width-100"
-                                             src="http://image.tmdb.org/t/p/w200/jnAtRqnP4mVZZmrJd2AOtU6t1zu.jpg"/>
+                                             src={`http://image.tmdb.org/t/p/w200${this.props.location.state.movie.movie.poster_path}`}
+                                        />
 
                                     </div>
 
                                     <div className="col-md-6">
 
-                                        <h3 className="font-condensed-bold color-darkgray">RAMPAGE</h3>
+                                        <h3 className="font-condensed-bold color-darkgray">{this.props.location.state.movie.movie.MovieName}</h3>
 
                                         <br/>
 
-                                        <h6 className="font-size-14 font-family-roboto font-weight-700 color-darkgray">Friday,
-                                            Apr
-                                            20<br/>
-                                            11:15 AM </h6>
+                                        <h6 className="font-size-14 font-family-roboto font-weight-700 color-darkgray">{moment(this.props.location.state.movie.Date).format("dddd")},
+                                            <br/>
+                                            {moment(this.props.location.state.movie.Date).format("MMMM")}  {moment(this.props.location.state.movie.Date).format("Do")}<br/>
+                                            {this.props.location.state.showtime}</h6>
 
 
                                         {/*<MuiThemeProvider>*/}
@@ -88,15 +94,15 @@ class CheckOutPayment extends Component {
 
                                 <div className="theatre-info">
                                     <span
-                                        className="font-family-roboto font-weight-700">CineLux Almaden Cafe & Lounge</span>
+                                        className="font-family-roboto font-weight-700">{this.props.location.state.movie.theatreName}</span>
                                     <br/>
-                                    <span className="font-size-13 font-family-roboto">2306 Almaden Road</span>
+                                    <span className="font-size-13 font-family-roboto">{this.props.location.state.movie.theatreCity}</span>
                                     <br/>
-                                    <span className="font-size-13 font-family-roboto">San Jose, CA 95125</span>
+                                    <span className="font-size-13 font-family-roboto">{this.props.location.state.movie.theatreState}, {this.props.location.state.movie.theatreZip}</span>
                                     <br/>
                                     <br/>
                                     <span className="font-size-13 font-family-roboto">
-                                        Auditorium 7
+                                        Screen Number {this.props.location.state.movie.ScreenNo}
                                     </span>
                                 </div>
 

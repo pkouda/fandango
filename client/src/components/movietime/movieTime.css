@@ -1,3 +1,4 @@
+
 .fd-movie {
     position: relative;
     background-color: #fff;
@@ -46,7 +47,7 @@
     color: #fff;
     font-size: 16px;
     overflow: hidden;
-    padding: 10px 20px;
+    padding: 8px 10px;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
@@ -75,10 +76,10 @@
 .btn, .icon {
     display: inline-block;
 }
-.btn, .cta {
-    cursor: pointer;
-    font-weight: 700;
-}
+/*.btn, .cta {*/
+    /*cursor: pointer;*/
+    /*font-weight: 700;*/
+/*}*/
 .btn, body {
     font-family: proxima-nova,Helvetica,Arial,sans-serif;
 }
@@ -242,4 +243,11 @@ a {
     -moz-transition: color .3s linear;
     -o-transition: color .3s linear;
     transition: color .3s linear;
+}
+.display-inline-div{
+    display: inline-flex;
+}
+.pranithDate{
+    width: 75%;
+    margin-left: 4.8%;
 }

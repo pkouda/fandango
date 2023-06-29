@@ -1,5 +1,5 @@
 body {
-    background-color: #F0F0F0;
+    background-color: #F0F0F0 !important;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -15,6 +15,10 @@ body {
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.font-size-30{
+    font-size: 30px;
 }
 
 .fandango-button{
@@ -41,7 +45,7 @@ body {
 }
 
 .font-color-white{
-    color: white;
+    color: white !important;
 }
 
 .font-timesNewRoman {
@@ -98,6 +102,16 @@ body {
     height: inherit;
     margin: auto;
 }
+
+.extra-review-class{
+    border: 1px solid #cccccc;
+}
+
+.extra-review-class p{
+    color : #212529 !important;
+}
+
+
 
 /*Adding CSS for Large-Dropdown*/
 
@@ -195,7 +209,7 @@ body {
 }
 
 .font-weight-700 {
-    font-weight: 500;
+    font-weight: 500 !important;
 }
 
 .header-form-input {
@@ -232,6 +246,10 @@ body {
     /*font-weight: bold;*/
     font-weight: 500;
     color: whitesmoke;
+}
+
+.mouse-pointer:hover{
+    cursor: pointer;
 }
 
 .carousel {
@@ -339,6 +357,10 @@ body {
     font-size: 15px;
 }
 
+.carousel-movie-name h5{
+    color: #4c4c4c !important;
+}
+
 .background-movie-top {
     background-color: rgba(0, 0, 0, 0.6);
     /*position: absolute;*/
@@ -351,11 +373,15 @@ body {
 .movieDetail-release-date{
     background-color: #262626;
     height: 246px;
+    line-height: 1.8;
 }
 
+p{
+    color: white !important;
+}
 .movieDetail-synopsis{
     background-color: #262626;
-    color: white;
+    color: white !important;
     text-align: center;
     width: 50%;
     margin: auto;
@@ -515,4 +541,73 @@ ul.breadcrumb {
 
 .carousel-date{
     border: 1px solid #CCCCCC;
+    cursor: pointer;
+}
+
+
+.movie-search-list{
+    border: 1px solid #cccccc;
+}
+
+.show-logged-in {
+    background:none!important;
+    color:inherit;
+    border:none;
+    padding:0!important;
+    font: inherit;
+    /*border is optional*/
+    border-bottom:1px solid #444;
+    cursor: pointer;
+}
+
+hr{
+    border : 1px solid #CCCCCC !important;
+}
+
+.custom-file-upload {
+    border: 2px solid #ccc !important;
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.file-button {
+    padding: 16px !important;
+    margin-bottom: 10px !important;
+}
+
+.display-none{
+    display: none;
+}
+
+.profile-div-propic {
+    height: 200px;
+    width: 200px;
+    padding: auto;
+}
+
+.admin-movie-list-edit p{
+    color: #212529 !important;
+}
+
+.admin-movie-list-edit {
+    line-height: 1.8;
+}
+
+.moviehall-admin-dropdown a{
+    color: #fe7900 !important;
+}
+
+.width-200px{
+    width: 200px;
+}
+
+.float-left{
+    float: left !important;
+}
+
+.font-weight-bold{
+    font-weight: bold !important;
 }

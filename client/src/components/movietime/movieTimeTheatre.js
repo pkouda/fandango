@@ -6,16 +6,38 @@ import Slider from "react-slick";
 import _ from 'lodash';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
+var axios = require('axios');
 
 class MovieTopSection extends Component {
+
+    /*componentWillMount(){
+
+         if(this.props.user.isLoggedIn==true)
+         {
+            console.log("User Email............",this.props.user.user.email);
+            var values={username:this.props.user.user.email, status:"open", pagename:"Movietime"};
+
+            const request =axios.post('http://localhost:3001/movietheatres/usertrack',values)
+            .then(response => {
+                console.log("sucessss",response.data)
+            }).catch(error => {
+                console.log("usertracking error",error);
+            });
+
+         }
+     }*/
+
+
+
     state = {
         movieSearch: "",
         Date: moment(new Date()).format()
     }
-    setDate(values){
+
+    setDate(values) {
         //console.log(values);
-        this.setState({Date:values})
-        console.log("i consoled this",this.state);
+        this.setState({Date: values})
+        console.log("i consoled this", this.state);
         this.props.getMoviesInSearchPage(this.state);
 
     }
@@ -61,16 +83,30 @@ class MovieTopSection extends Component {
 
     render() {
 
+        console.log(this.props);
         var settings = {
             slidesToShow: 7,
             slidesToScroll: 3,
             infinite: false,
         };
 
-        if(this.props.movietime.moviesTheatres.moviemap.length==0)
-        {
-            return(
-                <div>No Movies Found</div>
+        if (this.props.movietime.moviesTheatres.moviemap.length == 0) {
+            return (
+                <div>
+                    <div className="form-inline ml-5 my-lg-0 display-inline-div">
+                        <input className="form-control font-size-14 mt-3 header-form-input"
+                               placeholder="Enter Movie Name" type="text"
+                               onChange={(event) => {
+                                   this.setState({
+                                       movieSearch: event.target.value
+                                   });
+                               }}/>
+                        <button type="button" onClick={() => {
+                            this.searchMovie()
+                        }} className="my-2 my-sm-0 ml-4 header-button-go ">GO
+                        </button>
+
+                    </div> <br/>No Movies Found</div>
             )
         }
 
@@ -83,8 +119,9 @@ class MovieTopSection extends Component {
                         <div className="fandango-container">
 
                             <h1 className="font-condensed-bold-white pt-3">
-                                MOVIE TIMES + TICKETS
-                                <span className="font-color-fandango"> NEAR 95126</span>
+                                MOVIE TIMES + TICKETS FOR
+                                <span className="font-color-fandango">  {(this.state.movieSearch).toUpperCase()}</span>
+                                - <span className="font-color-fandango">  {moment(this.state.Date).format("YYYY-MM-DD")} </span>
                             </h1>
 
                             <nav class="nav-movie-top pb-2">
@@ -107,10 +144,9 @@ class MovieTopSection extends Component {
 
                     <div className="fandango-container">
                         <br/>
-                        <div className="date-picker__location">
-                            <span className="date-picker__location-text">ENTER CITY, STATE OR ZIP CODE</span>
-                            <input className="date-picker__location-input js-date-input"
-                                   placeholder="City, State or Zip Code" type="text"
+                        <div className="form-inline ml-5 my-lg-0 display-inline-div">
+                            <input className="form-control font-size-14 mt-3 header-form-input"
+                                   placeholder="Enter Movie Name" type="text"
                                    onChange={(event) => {
                                        this.setState({
                                            movieSearch: event.target.value
@@ -118,12 +154,17 @@ class MovieTopSection extends Component {
                                    }}/>
                             <button type="button" onClick={() => {
                                 this.searchMovie()
-                            }} className="my-2 my-sm-0 header-button-go">GO
+                            }} className="my-2 my-sm-0 ml-4 header-button-go ">GO
                             </button>
                         </div>
                     </div>
 
-                    <div className="fandango-container">
+
+
+
+                    <div className="fandango-container row">
+
+
                         {this.props.movietime.moviesTheatres.moviemap.map((item) => {
                             return (
                                 <div className="moviesTheatres col-10" id="moviesTheatres">
@@ -178,11 +219,47 @@ class MovieTopSection extends Component {
 
                                                             </ul>
                                                             <ol className="fd-movie__btn-list">
+                                                                {movie.Showtimes.map((showTimeitem) => {
+                                                                return (
+
+                                                                        <li className="fd-movie__btn-list-item">
+
+
+                                                                            <button onClick={() => this.props.history.push({
+                                                                                pathname: '/check-out',
+                                                                                state: {movie : movie, showtime : showTimeitem.time}
+                                                                            })}
+                                                                                    className="btn showtime-btn" disabled={!(showTimeitem.seats)}>{showTimeitem.time}</button>
+
+
+                                                                        </li>
+
+
+                                                                )})}
+
+                                                             {/*   <li className="fd-movie__btn-list-item">
+
+
+                                                                    <button onClick={() => this.props.history.push({
+                                                                        pathname: '/check-out',
+                                                                        state: {movie : movie, showtime : '9:30a'}
+                                                                    })}
+                                                                          className="btn showtime-btn">9:30a</button>
+
+
+                                                                </li>
+
 
                                                                 <li className="fd-movie__btn-list-item">
 
 
-                                                                    <span className="btn showtime-btn">4:00p</span>
+                                                                    <button
+                                                                        onClick={() => this.props.history.push({
+                                                                            pathname: '/check-out',
+                                                                            state: {movie : movie, showtime : '12:30p'}
+                                                                        })}
+                                                                        className="btn showtime-btn">12:30p
+                                                                    </button>
 
 
                                                                 </li>
@@ -191,7 +268,13 @@ class MovieTopSection extends Component {
                                                                 <li className="fd-movie__btn-list-item">
 
 
-                                                                    <span className="btn showtime-btn">6:15p</span>
+                                                                    <button
+                                                                        onClick={() => this.props.history.push({
+                                                                            pathname: '/check-out',
+                                                                            state: {movie : movie, showtime : '3:30p'}
+                                                                        })}
+
+                                                                          className="btn showtime-btn">3:30p</button>
 
 
                                                                 </li>
@@ -200,19 +283,14 @@ class MovieTopSection extends Component {
                                                                 <li className="fd-movie__btn-list-item">
 
 
-                                                                    <span className="btn showtime-btn">8:30p</span>
+                                                                    <button onClick={() => this.props.history.push({
+                                                                        pathname: '/check-out',
+                                                                        state: {movie : movie, showtime : '9:30p'}
+                                                                    })}
+                                                                          className="btn showtime-btn">9:30p</button>
 
 
-                                                                </li>
-
-
-                                                                <li className="fd-movie__btn-list-item">
-
-
-                                                                    <span className="btn showtime-btn">10:45p</span>
-
-
-                                                                </li>
+                                                                </li>*/}
 
                                                             </ol>
                                                         </li>
@@ -240,13 +318,9 @@ class MovieTopSection extends Component {
                 <div id="initialLoad">
                     <div className="searchboxResults">
                         <br/>
-                        <div className="date-picker__location">
-                            <div className="date-picker__error js-date-picker__error hide"></div>
-
-
-                            <span className="date-picker__location-text">ENTER CITY, STATE OR ZIP CODE</span>
-                            <input className="date-picker__location-input js-date-input"
-                                   placeholder="City, State or Zip Code" type="text"
+                        <div className="form-inline ml-5 my-lg-0 display-inline-div">
+                            <input className="form-control font-size-14 mt-3 header-form-input"
+                                   placeholder="Enter Movie Name" type="text"
                                    onChange={(event) => {
                                        this.setState({
                                            movieSearch: event.target.value
@@ -254,7 +328,7 @@ class MovieTopSection extends Component {
                                    }}/>
                             <button type="button" onClick={() => {
                                 this.searchMovie()
-                            }} className="btn date-picker__location-submit js-date-picker-btn">GO
+                            }} className="my-2 my-sm-0 ml-4 header-button-go ">GO
                             </button>
                         </div>
                     </div>
@@ -266,8 +340,9 @@ class MovieTopSection extends Component {
 }
 
 function mapStateToProps(state) {
-    return {movietime: state.moviesSearchPagePK}
+    return {movietime: state.moviesSearchPagePK,
+         user:state.getUser}
 }
 
-
 export default connect(mapStateToProps, {getMoviesInSearchPage})(MovieTopSection);
+

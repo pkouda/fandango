@@ -1,0 +1,562 @@
+/*body {*/
+/*background-color: #F0F0F0 !important;*/
+/*font-family: 'Roboto', sans-serif;*/
+/*}*/
+
+.font-condensed {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.background-white {
+    background-color: white;
+}
+
+.font-condensed-bold {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.clear-left{
+    clear: left;
+}
+
+.margin-left{
+    margin-left: 40px;
+}
+
+.font-size-30 {
+    font-size: 30px;
+}
+
+/*.fandango-button{*/
+/*background-color: #FD7D15;*/
+/*padding: 8px !important;*/
+/*font-family: Roboto !important;*/
+/*!*font-weight: bold !important;*!*/
+/*}*/
+
+.align-right {
+    float: right;
+}
+
+.font-condensed-bold-white {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.font-color-fandango {
+    color: #FD7D15;
+}
+
+.font-color-white {
+    color: white !important;
+}
+
+.font-timesNewRoman {
+    font-size: 14px;
+    font-family: "Times New Roman";
+    font-style: italic;
+}
+
+.font-timesNewRoman-gray {
+    font-size: 14px;
+    font-family: "Times New Roman";
+    font-style: italic;
+    color: gray;
+}
+
+.font-size-13 {
+    font-size: 13px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+#brand-bar {
+    height: 32px;
+    background-color: #000;
+    color: #FFF !important;
+    line-height: 32px;
+    font-size: 14px !important;
+}
+
+#brand-bar a {
+    color: #CCC;
+}
+
+.color-ccc {
+    color: #ccc;
+}
+
+.color-darkgray {
+    color: #424141;
+}
+
+.font-family-roboto {
+    font-family: Roboto;
+}
+
+.fandango-container {
+    width: 1260px;
+    height: inherit;
+    margin: auto;
+}
+
+.extra-review-class {
+    border: 1px solid #cccccc;
+}
+
+.extra-review-class p {
+    color: #212529 !important;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-weight-700 {
+    font-weight: 700 !important;
+}
+
+.header-form-input {
+    width: 300px !important;
+    border-radius: 18px;
+}
+
+.header-button-go {
+    background-color: #FD7D15;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    font-style: italic;
+    font-size: 18px;
+    padding: 4px;
+    border: 2px solid #FD7D15;
+}
+
+.home-under-brand {
+    height: 45px;
+    background-color: darkgrey;
+}
+
+.under-brand-buy {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: white;
+}
+
+.inside-brand-buy {
+    font-family: Roboto;
+    font-size: 15px;
+    /*font-weight: bold;*/
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+.mouse-pointer:hover {
+    cursor: pointer;
+}
+
+.carousel {
+    margin-top: 15px;
+    width: 890px;
+    height: 254px;
+    margin-left: 60px;
+    margin-bottom: 70px;
+}
+
+.carousel-dates {
+    margin-top: 15px;
+    width: 890px;
+    margin-left: 60px;
+}
+
+.slick-next:before {
+    font-size: 40px;
+    color: darkgray;
+}
+
+.slick-prev:before {
+    font-size: 40px;
+    color: darkgray;
+}
+
+.slick-prev {
+    left: -45px;
+}
+
+.image-carousel {
+    width: 133px;
+    height: 210px;
+    z-index: 10;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+    -webkit-backface-visibility: hidden;
+}
+
+.image-carousel:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    cursor: pointer;
+    filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+    M11=2, M12=-0, M21=0, M22=2);
+}
+
+.image-movie-detail {
+    width: 164px;
+    height: 246px;
+    z-index: 10;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+    -webkit-backface-visibility: hidden;
+}
+
+.image-movie-detail:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    cursor: pointer;
+    filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+    M11=2, M12=-0, M21=0, M22=2);
+}
+
+.carousel-movie-image {
+    float: left;
+    z-index: 10;
+    overflow: hidden;
+    width: 133px !important;
+}
+
+.movieDetail-image-div {
+    float: left;
+    z-index: 10;
+    overflow: hidden;
+    width: 164px !important;
+}
+
+.image {
+    margin: 0;
+    border: 0
+}
+
+.image-theatres {
+    width: 134px;
+}
+
+.carousel-movie-name {
+    background-color: white !important;
+    clear: left;
+    width: 133px;
+    height: 78px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.carousel-movie-name h5 {
+    color: #4c4c4c !important;
+}
+
+.background-movie-top {
+    background-color: rgba(0, 0, 0, 0.6);
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.movieDetail-release-date {
+    background-color: #262626;
+    height: 246px;
+    line-height: 1.8;
+}
+
+.movieDetail-synopsis {
+    background-color: #262626;
+    color: white !important;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    font-size: 18px;
+    font-weight: 500 !important;
+}
+
+.movieDetail-synopsis-big {
+    background-color: #262626;
+}
+
+.movie-showtimes-icon {
+    float: left;
+    width: 20%;
+}
+
+.movie-showtimes-icon:before {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjVweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMjUgMTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1IDE5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8Zz4NCgk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE4LjIsMy4zIDQuNSw3IDYuOCwxNS45IDIwLjUsMTIuMSAJIi8+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIyLjcsNC4zTDIxLjUsMEwwLDUuOWwxLjEsNC4zYzEuMi0wLjMsMi41LDAuNCwyLjgsMS42YzAuMywxLjItMC40LDIuNS0xLjYsMi44TDMuNSwxOUwyNSwxMy4xbC0xLjItNC40DQoJCWMtMS4yLDAuMy0yLjUtMC40LTIuOC0xLjZDMjAuNyw1LjksMjEuNCw0LjYsMjIuNyw0LjN6IE0yMS4zLDEyLjZMNi40LDE2LjZMMy43LDYuNmwxNC45LTQuMUwyMS4zLDEyLjZ6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==) center center no-repeat;
+    display: inline-block;
+    height: 38px;
+    width: 38px;
+    content: '';
+    border: 1px solid #fff;
+    border-radius: 19px;
+    vertical-align: top;
+    margin-right: -1px;
+}
+
+.movie-showtimes {
+    background-color: rgba(51, 51, 51, .75);
+    padding: 10px;
+}
+
+/*Rating Classes*/
+
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+
+/* Basic styles */
+
+.rating-row {
+    text-align: center;
+}
+
+.rating-stars {
+    margin: auto;
+    margin-left: 178px;
+}
+
+.rotten-tomatoes__icon.icon {
+    display: inline-block;
+    width: 32px !important;
+    height: 32px !important;
+    background-size: contain;
+}
+
+.icon.icon-rottom-fresh {
+    width: 295px;
+    height: 305px;
+    background-position: center;
+}
+
+.icon-rottom-fresh, .no-touch .invert-hover .icon-rottom-fresh:hover {
+    background-image: url('data:image/svg+xml;charset%3DUS-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Fresh-Tomato%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20%20%20y%3D%220px%22%20viewBox%3D%220%200%20295%20305%22%20style%3D%22enable-background%3Anew%200%200%20295%20305%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20%20.st0%7Bfill%3A%23FA320A%3B%7D%20%20.st1%7Bfill%3A%2300912D%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M33.2%2C89.1c-22.1%2C23.1-34.6%2C54.7-32.1%2C94c5%2C80.3%2C80.3%2C126.3%2C156%2C121.5c75.8-4.7%2C142.9-59.5%2C137.9-139.9%20%20c-2.9-47.3-27-82.6-63.2-102.4L128.4%2C49.8L33.2%2C89.1z%22%2F%3E%3Cpath%20class%3D%22st1%22%20d%3D%22M156.9%2C43.1c15.6-3.7%2C60.4-0.4%2C74.7%2C18.7c0.9%2C1.1-0.4%2C3.3-1.7%2C2.7c-23.7-10.3-63.8%2C23.1-91.8%2C5.6%20%20c0.2%2C6.3-1%2C37-44.3%2C38.8c-1%2C0-1.6-1-0.9-1.7c5.8-6.6%2C11.6-23.3%2C3.2-32.2C76.5%2C92.4%2C65.9%2C98.1%2C23.4%2C86.6c-1.4-0.4-0.9-2.6%2C0.6-3.2%20%20c8-3.1%2C26.2-16.5%2C43.5-22.5c3.3-1.1%2C6.5-2%2C9.7-2.5c-19-1.7-27.5-4.3-39.6-2.5c-1.3%2C0.2-2.2-1.3-1.4-2.4%20%20c16.3-20.9%2C46.2-27.3%2C64.7-16.1C89.4%2C23.3%2C80.5%2C12%2C80.5%2C12l21.1-12c0%2C0%2C8.7%2C19.5%2C15.1%2C33.7c15.7-23.2%2C45-25.4%2C57.3-8.9%20%20c0.7%2C1%2C0%2C2.4-1.3%2C2.3c-10.1-0.2-15.6%2C8.9-16%2C15.9L156.9%2C43.1z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+}
+
+.nav-movie-top a {
+    color: white !important;
+    margin-right: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-review {
+    background-color: white;
+}
+
+.form-review hr {
+    margin: 0 !important;
+}
+
+.note-submit-review {
+    font-size: 12px;
+    margin: 0px 23px;
+    color: gray;
+}
+
+.width-100 {
+    width: 100%;
+    max-width: 100%;
+}
+
+.theatre-info {
+    line-height: 1;
+}
+
+ul.breadcrumb {
+    display: inline-block;
+    width: 295px;
+    float: right;
+    padding: 0;
+    color: #cccccc;
+    font-family: 'Times New Roman';
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 0px;
+}
+
+.border-red {
+    border: 1px solid #eb3730;
+}
+
+.redux-payment-form {
+    width: 100%;
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.error-message {
+    margin-top: 5px;
+    color: #eb3730;
+}
+
+.max-width-50 {
+    max-width: 50%;
+}
+
+.max-width-20 {
+    /*width: 31%;*/
+    max-width: 23%;
+    min-width: 23%;
+    /*margin: auto;*/
+    float: left;
+}
+
+.max-width-40 {
+    /*width: 31%;*/
+    max-width: 40%;
+    min-width: 40%;
+    /*margin: auto;*/
+    float: left;
+}
+
+.style-date {
+    margin: 0px 30px;
+    float: left;
+}
+
+.max-width-30 {
+    /*width: 31%;*/
+    max-width: 31%;
+    min-width: 25%;
+    /*margin: auto;*/
+    float: left;
+}
+
+.carousel-date {
+    border: 1px solid #CCCCCC;
+}
+
+.movie-search-list {
+    border: 1px solid #cccccc;
+    padding : 20px;
+    margin: auto;
+}
+
+.max-width-70{
+    max-width: 90%;
+}
+
+.show-logged-in {
+    background: none !important;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    /*border is optional*/
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+}
+
+hr {
+    border: 1px solid #CCCCCC !important;
+}
+
+.custom-file-upload {
+    border: 2px solid #ccc !important;
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.file-button {
+    padding: 16px !important;
+    margin-bottom: 10px !important;
+}
+
+.display-none {
+    display: none;
+}
+
+.profile-div-propic {
+    height: 200px;
+    width: 200px;
+    padding: auto;
+}
+
+.admin-movie-list-edit p {
+    color: #212529 !important;
+}
+
+.admin-movie-list-edit {
+    line-height: 1.8;
+}
+
+.admin-bill-list{
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    margin: auto;
+}
+
+.moviehall-admin-dropdown a {
+    color: #fe7900 !important;
+}
+
+.width-200px {
+    width: 200px;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.font-weight-bold {
+    font-weight: bold !important;
+}
+
+.megaDropDownAdmin-brand {
+    float: left;
+    width: 242px;
+    height: 56px;
+    padding: 5px;
+}
+
+.admin-text{
+    margin-top: 7px;
+    margin-left: 0px;
+    padding-left: 0px;
+    color: #fe7900;
+}
+
+.error-msg{
+    color: red !important;
+}
+
+.style-container-name{
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: auto;
+}
+
+.margin-auto{
+    margin: auto;
+}
